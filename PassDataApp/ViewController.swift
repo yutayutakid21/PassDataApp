@@ -9,6 +9,7 @@
 /*
  
  近藤さん・・・テキストフィールドを2つ作り、ボタンを押した際に値を渡してください。(ViewController.swift)、
+ 
 
  中塚さんがpush後に再度クローンし、セグエをつないでください。idはnext
  
@@ -25,15 +26,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var textField1: UITextField!
+    
+    
+    @IBOutlet weak var textField2: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        
-        // Do any additional setup after loading the view.
+    
     }
 
+    
+    
+    //ボタンを押したら、textFieldの内容を値を渡して画面遷移します。
+    //cellのidentifireは記入をお願いしますね。
+    
+    
+    @IBAction func next(_ sender: Any) {
+        performSegue(withIdentifier: "Cell", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC:NextViewController = segue.destination as! UITransitionContextViewControllerKey
+        nextVC.passedtext1 = textField1!
+        nextVC.passedtext2 = textField2!
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //キーボードを閉じる
+        textField1.resignFirstResponder()
+        textField2.resignFirstResponder()
+    }
+    
+    
 
 }
 
