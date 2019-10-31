@@ -52,8 +52,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextVC:NextViewController = segue.destination as! UITransitionContextViewControllerKey
-        nextVC.passedtext1 = textField1!
-        nextVC.passedtext2 = textField2!
+        nextVC.passedtext1 = textField1.text!
+        nextVC.passedtext2 = textField2.text!
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
