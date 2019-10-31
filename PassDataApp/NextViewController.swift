@@ -10,8 +10,8 @@ import UIKit
 
 class NextViewController: UIViewController {
 
-    var name = String()
-    var comment = String()
+    var passedtext1 = String()
+    var passedtext2 = String()
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
@@ -20,8 +20,8 @@ class NextViewController: UIViewController {
         super.viewDidLoad()
 
         
-        nameLabel.text = name
-        commentLabel.text = comment
+        nameLabel.text = passedtext1
+        commentLabel.text = passedtext2
         // Do any additional setup after loading the view.
     }
     
